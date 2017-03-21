@@ -51,14 +51,13 @@ PART 2 - Getting data from Inshorts npm package
  - Run the file again in terminal to check if no error.
  - Use the getNews method to get news from the api
  - If you want just headlines, then edit the code as 
-function(err,result){
- var headlines = result.headline;
- for(var i=0; i< headlines.length;i++){
- 	console.log(headlines[i]);
-		
- }
- //if(!err)
- //	console.log(result);
- //else
- //	console.log(err);
-}
+		function(err,result){
+ 		var headlines = result.headline;
+		 for(var i=0; i< headlines.length;i++){
+ 		console.log(headlines[i]);
+ 		}
+ 		//if(!err)
+ 		//	console.log(result);
+ 		//else
+ 		//	console.log(err);
+		}
