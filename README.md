@@ -12,6 +12,7 @@ PART 1 - Creating a python script to send sms to my mobile
      - https://docs.python.org/2/tutorial/modules.html 
  - Created a free account on twilio to register my mobile
  - Install the twilio module using pip
+   - pip is used to install python packages
    - sudo pip install twilio
  - In your python script impot twilio module
  - Follow the code here - https://www.twilio.com/docs/api/rest/sending-messages
