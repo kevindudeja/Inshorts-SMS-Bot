@@ -1,9 +1,6 @@
 # Inshorts-SMS-Bot
 Creating a Inshorts SMS Bot to send News Headlines using Twilio SMS API - Easy
 
-The un-intimidating guide to creating a SMS Bot using Python and NodeJS
- - I really haven't finished the NodeJS part but fingers-crossed! - DONE Hooray!
- 
 PART 1 - Creating a python script to send sms to my mobile
 
 API - Twilio
@@ -18,12 +15,14 @@ API - Twilio
  
 Packages
 - pip is used to install python packages
-     - sudo apt - get install pip
-     
+  ```
+  sudo apt - get install pip
+  ```  
 Modules
  - Install the twilio module for python using pip
-   - sudo pip install twilio
-   
+   ```
+   sudo pip install twilio
+   ```
 Steps
  - Create a new python file say sendsms.py and in your python script import the twilio module
    - import twilio
@@ -36,16 +35,20 @@ Steps
  OUTPUT: Recieved 1 Message from 51465
  " Sent from your Twilio trial account - Hello World "
  
-PART 2 - Getting data from Inshorts npm package
+PART 2 - Getting data from Inshorts npm package and saving it in a text file
 
 Reference
  - Follow this playlist to learn how to use API's and creating a BOT - https://www.youtube.com/watch?v=s70-Vsud9Vk&list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV
  
 Packages Required
  - Install npm for installing NodeJS packages
-   - sudo apt - get install npm
+   ```
+   sudo apt - get install npm
+   ```
  - Install NodeJS
-   - sudo apt - get install nodejs
+   ```
+   sudo apt - get install nodejs
+   ```
    
 Documentation
  - Inshort Package Documentation - https://www.npmjs.com/package/inshorts
@@ -54,15 +57,23 @@ Steps
  - Create a directory say inshorts
  - Create a JSON file in that dir using 'npm init' command
  - install the inshorts package in that dir
-   - npm install inshorts --save
-   - Above command will download the packages in that directory
+   ```
+   npm install inshorts --save
+   ```
+   - Above command will download the packages in that directory and --save adds it to your dependencies in you JSON file
  - Create a js file say inshorts.js
-   - console.log("Bot is working");
+   ```
+   console.log("Bot is working");
+   ```
  - run this file in terminal
-   - node inshorts.js
-   - OUTPUT: Bot is working
+   ```
+   node inshorts.js
+   OUTPUT: Bot is working
+   ```
  - Call the library package in your inshorts.js file
-   - var inshorts= require('inshorts').init();
+   ```
+   var inshorts= require('inshorts').init();
+   ```
  - Run the file again in terminal to check if no error.
  - Use the getNews method to get news from the api
  - If you want just headlines, then edit the code as
@@ -70,3 +81,31 @@ Steps
    - Run a for loop from i = 0 to headlines.length and print using console.log(headlines[i]);
    - Comment out the if and else block
   - run the file again in terminal
+  
+File handling in Node.js
+ - https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm
+ - Edit the gotData() to write the headlines to a textfile
+
+PART 3 - Reading the text file created line-by-line and sending the from the sendsms script
+
+How to read a file line by line in python
+```
+fo = open("filename.txt","r")
+with fo as f:
+	content = f.readlines()
+	for i in content:
+		print i
+```
+
+Editing the code
+```
+fo = open("filename.txt","r")
+with fo as f:
+	content = f.readlines()
+	headline = content[0] #sends the first news headline
+	client.messages.create(
+		to = "Your_number_with_country_code", 
+		from_="Your_twilio_outgoing_number", 
+		body =headline, 
+	)
+ ```
