@@ -24,13 +24,11 @@ Modules
    sudo pip install twilio
    ```
 Steps
- - Create a new python file say sendsms.py and in your python script import the twilio module
-   - import twilio
- - Follow the rest of the code here in the twilio api documentation - https://www.twilio.com/docs/api/rest/sending-messages
  - The documentation says an outgoing number needs to be set up, which is passed as an argument in the function calls of the api
  - Hence, set up an outgoing number in your twilio dashboard - https://www.twilio.com/console/sms/getting-started/basics
+ - Edit the sendsms.py script with your phone number, OAuth code etc...
  - run the python script in the terminal
-   - python sendsms.py
+   - python sendsmstest.py
  
  OUTPUT: Recieved 1 Message from 51465
  " Sent from your Twilio trial account - Hello World "
@@ -38,7 +36,7 @@ Steps
 PART 2 - Getting data from Inshorts npm package and saving it in a text file
 
 Reference
- - Follow this playlist to learn how to use API's and creating a BOT - https://www.youtube.com/watch?v=s70-Vsud9Vk&list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV
+ - Follow this playlist to learn how to use API's, JSON file, NPM and creating a BOT - https://www.youtube.com/watch?v=s70-Vsud9Vk&list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV
  
 Packages Required
  - Install npm for installing NodeJS packages
@@ -50,62 +48,44 @@ Packages Required
    sudo apt - get install nodejs
    ```
    
-Documentation
+Modules
+ - Install inshorts package
+   ```
+   sudo npm install inshorts --save
+   ```
+ - Install node-schedule package
+   ```
+   sudo npm install node-schedule --save
+   ```
+   
+Documentation and ref
  - Inshort Package Documentation - https://www.npmjs.com/package/inshorts
+ - http://stackoverflow.com/questions/15088037/python-script-to-do-something-at-the-same-time-every-day
+ - http://stackoverflow.com/questions/26306090/running-a-function-everyday-midnight
  
 Steps
- - Create a directory say inshorts
- - Create a JSON file in that dir using 'npm init' command
- - install the inshorts package in that dir
+ - Creating your own JSON file for your project
    ```
-   npm install inshorts --save
+   npm init
    ```
-   - Above command will download the packages in that directory and --save adds it to your dependencies in you JSON file
- - Create a js file say inshorts.js
+ - --save will add the packages installed to your JSON dependencies
+ - Run the inshortstest.js
    ```
-   console.log("Bot is working");
+   node inshortstest.js
    ```
- - run this file in terminal
-   ```
-   node inshorts.js
-   OUTPUT: Bot is working
-   ```
- - Call the library package in your inshorts.js file
-   ```
-   var inshorts= require('inshorts').init();
-   ```
- - Run the file again in terminal to check if no error.
- - Use the getNews method to get news from the api
- - If you want just headlines, then edit the code as
-   - Create a var headlines = result.headline; in the function(err,result) block//here headlines is a object consisting of all the headlines
-   - Run a for loop from i = 0 to headlines.length and print using console.log(headlines[i]);
-   - Comment out the if and else block
-  - run the file again in terminal
+ - If you want just the headlines then comment the if else block and umcomment the lower block of code
+ - By executing the inshorts.js, and 'out.txt' file will be created with the news headlines
   
 File handling in Node.js
  - https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm
- - Edit the gotData() to write the headlines to a textfile
 
-PART 3 - Reading the text file created line-by-line and sending the from the sendsms script
-
-How to read a file line by line in python
-```
-fo = open("filename.txt","r")
-with fo as f:
-	content = f.readlines()
-	for i in content:
-		print i
-```
-
-Editing the code
-```
-fo = open("filename.txt","r")
-with fo as f:
-	content = f.readlines()
-	headline = content[0] #sends the first news headline
-	client.messages.create(
-		to = "Your_number_with_country_code", 
-		from_="Your_twilio_outgoing_number", 
-		body =headline, 
-	)
- ```
+PART 3 - Reading the text file created line-by-line and sending the headlines from the sendsms script
+  - By executing the sendsms2.py will send the first headline in the textfile to your mobile
+  - By executing the sendsms3.py you can shedule when the SMS is sent
+    ```
+    schedule.every().day.at("08:00").do(sendsms,' ') #will send SMS at 8:00AM
+    ```
+    
+  
+  
+ 
