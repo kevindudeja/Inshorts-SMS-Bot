@@ -1,6 +1,14 @@
 # Inshorts-SMS-Bot
 Creating a Inshorts SMS Bot to send News Headlines using Twilio SMS API - Easy
 
+Files to be executed
+```
+node inshorts.js
+```
+```
+python sendsms.py
+```
+
 PART 1 - Creating a python script to send sms to my mobile
 
 API - Twilio
@@ -34,9 +42,6 @@ Steps
  " Sent from your Twilio trial account - Hello World "
  
 PART 2 - Getting data from Inshorts npm package and saving it in a text file
-
-Reference
- - Follow this playlist to learn how to use API's, JSON file, NPM and creating a BOT - https://www.youtube.com/watch?v=s70-Vsud9Vk&list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV
  
 Packages Required
  - Install npm for installing NodeJS packages
@@ -59,7 +64,9 @@ Modules
    ```
    
 Documentation and ref
+ - Follow this playlist to learn how to use API's, JSON file, NPM and creating a BOT - https://www.youtube.com/watch?v=s70-Vsud9Vk&list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV
  - Inshort Package Documentation - https://www.npmjs.com/package/inshorts
+ - https://www.npmjs.com/package/node-schedule
  - http://stackoverflow.com/questions/15088037/python-script-to-do-something-at-the-same-time-every-day
  - http://stackoverflow.com/questions/26306090/running-a-function-everyday-midnight
  
