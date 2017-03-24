@@ -4,25 +4,18 @@ Creating a Inshorts SMS Bot to send News Headlines using Twilio SMS API - Easy
 Installing Ubuntu terminal for windows users
  - https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
 
-Files to be executed
-```
-node inshorts.js
-```
-```
-python sendsms.py
-```
-
 PART 1 - Creating a python script to send sms to my mobile
 
-API - Twilio
- - Used Twilio to send text messages using its web service APIs.
+API
+ - Used Twilio API for python to send text messages using its web service APIs.
    - Twilio is free for 1 registered user 
    - Experience with Python - Just read articles about what can be done with python and basic syntax
    - Experience with Git - gittergoo.. gittergoo..
    - Fun article to read - https://hackernoon.com/the-programmers-guide-to-booking-a-plane-11e37d610045#.ixuetm3pf
    - Read up on API's and Modules
      - https://docs.python.org/2/tutorial/modules.html 
- - Created a free account on twilio to register my mobile for the service
+     
+ - Create a free account on twilio to register your mobile for the service
  
 Packages
 - pip is used to install python packages
@@ -44,8 +37,8 @@ Steps
  OUTPUT: Recieved 1 Message from 51465
  " Sent from your Twilio trial account - Hello World "
  
-PART 2 - Getting data from Inshorts npm package and saving it in a text file
- 
+PART 2 - Getting data using Inshorts npm package and saving it in a text file
+
 Packages Required
  - Install npm for installing NodeJS packages
    ```
@@ -84,7 +77,7 @@ Steps
    node inshortstest.js
    ```
  - If you want just the headlines then comment the if else block and umcomment the lower block of code
- - By executing the inshorts.js, and 'out.txt' file will be created with the news headlines
+ - By executing the inshorts.js, an 'out.txt' file will be created with the news headlines
   
 File handling in Node.js
  - https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm
@@ -95,7 +88,3 @@ PART 3 - Reading the text file created line-by-line and sending the headlines fr
     ```
     schedule.every().day.at("08:00").do(sendsms,' ') #will send SMS at 8:00AM
     ```
-    
-  
-  
- 
