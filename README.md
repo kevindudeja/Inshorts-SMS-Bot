@@ -1,6 +1,9 @@
 # Inshorts-SMS-Bot
 Creating a Inshorts SMS Bot to send News Headlines using Twilio SMS API - Easy
 
+Installing Ubuntu terminal for windows users
+ - https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
+
 Files to be executed
 ```
 node inshorts.js
