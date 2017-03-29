@@ -1,10 +1,13 @@
 # Inshorts-SMS-Bot
-Creating a Inshorts SMS Bot to send News Headlines using Twilio SMS API - Easy
+Creating an Inshorts SMS Bot and using it to send News Headlines using Twilio SMS API - Easy
+
+Why I did this project?
+My friend broke his smartphone and changed to a nokia handset, hence I thought it'd be fun to implement this project and get to know about using API's and Github and to shut him up about not having a smartphone.
 
 Installing Ubuntu terminal for windows users
  - https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
 
-PART 1 - Creating a python script to send sms to my mobile
+PART 1 - Creating a python script to send sms to your mobile
 
 API
  - Used Twilio API for python to send text messages using its web service APIs.
